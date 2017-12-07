@@ -1,4 +1,4 @@
-package lesson08;
+package lesson08.a_logging;
 
 import com.google.common.base.Function;
 import org.openqa.selenium.By;

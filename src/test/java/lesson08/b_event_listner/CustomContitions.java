@@ -1,4 +1,4 @@
-package lesson08;
+package lesson08.b_event_listner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

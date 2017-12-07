@@ -1,4 +1,4 @@
-package lesson08;
+package lesson08.a_logging;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

@@ -1,4 +1,4 @@
-package lesson08;
+package lesson08.b_event_listner;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,24 +35,14 @@ public class FirstTest extends BaseTest {
         mainPage.enterQuery(query1);
         LOG.debug("Waiting for suggestion.");
         assertThat(listSizeIs(ADVICE_LOCATOR,7));
+        LOG.debug("Suggestion was appeared.");
         assertThat(textToBePresentInElement($(ADVICE_LOCATOR), query1));
 
         LOG.info("Enter query = '" + query2 + "'.");
         mainPage.enterQuery(query2);
         LOG.debug("Waiting for suggestion.");
         assertThat(listSizeIs(ADVICE_LOCATOR,1));
+        LOG.debug("Suggestion was appeared.");
         assertThat(textToBePresentInElement($(ADVICE_LOCATOR), query2));
-    }
-
-    @Test
-    public void test_warning(){
-        open("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-        assertThat(ExpectedConditions.titleContains("Login"));
-        Logs logs = getWebDriver().manage().logs();
-        LogEntries logEntries = logs.get(LogType.BROWSER);
-
-        for (LogEntry logEntry : logEntries) {
-            System.out.println(logEntry.getMessage());
-        }
     }
 }

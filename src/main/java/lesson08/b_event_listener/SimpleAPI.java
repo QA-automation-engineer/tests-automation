@@ -1,4 +1,4 @@
-package lesson08.b_event_listner;
+package lesson08.b_event_listener;
 
 import com.google.common.base.Function;
 import org.openqa.selenium.By;

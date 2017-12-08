@@ -1,18 +1,13 @@
-package lesson08.b_event_listner;
+package lesson08.b_event_listener;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.LoggingPreferences;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.logging.Level;
 
 public class BaseTest extends SimpleAPI {
 
@@ -21,7 +16,7 @@ public class BaseTest extends SimpleAPI {
     @BeforeClass
     public static void setUp(){
         EventFiringWebDriver eventDriver = new EventFiringWebDriver(new ChromeDriver());
-        eventDriver.register(new EventListner());
+        eventDriver.register(new EventListener());
         webDriver = eventDriver;
         //webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         eventDriver.manage().window().maximize();

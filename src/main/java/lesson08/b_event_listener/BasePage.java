@@ -1,4 +1,4 @@
-package lesson08.b_event_listner;
+package lesson08.b_event_listener;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

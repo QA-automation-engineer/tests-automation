@@ -1,0 +1,1 @@
+Tests automation course: Java + Selenium WebDriver

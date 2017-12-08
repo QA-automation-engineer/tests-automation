@@ -1,4 +1,4 @@
-package lesson08.b_event_listner;
+package lesson08.b_event_listener;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,11 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.logging.LogEntries;
-import org.openqa.selenium.logging.LogEntry;
-import org.openqa.selenium.logging.LogType;
-import org.openqa.selenium.logging.Logs;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static lesson07.b_refactoring_without_page_factory.CustomContitions.listSizeIs;
 import static lesson07.b_refactoring_without_page_factory.MainPage.ADVICE_LOCATOR;

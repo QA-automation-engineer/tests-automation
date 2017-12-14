@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import utils.CredsHandler;
 
 import java.io.File;
@@ -43,17 +42,18 @@ public class FirstTest extends BaseTest {
         int httpStatusCode = fileDownloader.getLastDownloadHTTPStatus();
 
         Assert.assertThat("Check status.",httpStatusCode, is(200));
-        //Assert.assertThat("check hash",getFileHash(secretFile, SHA1), CoreMatchers.equalTo("320828533ebf1bda3925ba1cbf71cf556250fbe6"));
-        Assert.assertThat(new PdfComparator(new File("D:\\Programs\\Drivers\\IN019477.pdf"), secretFile).compare().writeTo("diffOutput"), is(true));
+        //Assert.assertThat("check hash",getFileHash(secretFile, SHA1), CoreMatchers.equalTo("aa784180ef6d7a5990170dbe1f0b65d49b017c76"));
+        Assert.assertThat(new PdfComparator(new File("C:\\Users\\vmuser\\Documents\\IN019477.pdf"), secretFile)
+                .compare().writeTo("diffOutputPass"), is(true));
     }
 
     @Test
     public void test_upload() throws InterruptedException {
         open("http://the-internet.herokuapp.com/upload");
         assertThat(titleContains("Internet"));
-        $(By.id("file-upload")).sendKeys("C:\\Users\\vladimir.trandafilov\\mm.cfg");
+        $(By.id("file-upload")).sendKeys("C:\\Users\\vmuser\\test.txt");
         $(By.id("file-submit")).click();
-        assertThat(textToBePresentInElementLocated(By.tagName("h3"),"File Uploaded!"));
+        assertThat(textToBePresentInElementLocated(By.tagName("h3"),"File Uploaded!!"));
         Thread.sleep(2000);
     }
 }

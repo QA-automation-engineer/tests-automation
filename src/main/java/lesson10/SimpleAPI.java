@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllElementsLocatedBy;
@@ -37,5 +39,13 @@ public abstract class SimpleAPI {
 
     protected <V> V assertThat(Function<? super WebDriver, V> contition) {
         return (new WebDriverWait(getWebDriver(),5)).until(contition);
+    }
+
+    static {
+        if(System.getProperty("report.path") == null){
+            Date dateNow = new Date();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+            System.setProperty("report.path", "./reports/IDE-test-build-" + format.format(dateNow));
+        }
     }
 }

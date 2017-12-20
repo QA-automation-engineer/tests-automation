@@ -78,6 +78,10 @@
                             <name>report.path</name>
                             <value>${report.path}</value>
                         </property>
+                        <property>
+                            <name>isRemote</name>
+                            <value>false</value>
+                        </property>
                     </systemProperties>
                 </configuration>
                 <dependencies>
